@@ -1,4 +1,4 @@
-package com.user.entity;
+package com.counsellor.usermanagement.Entity;
 
 import java.time.LocalDate;
 
@@ -14,12 +14,16 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name="user_tbl")
-public class User {
+public class User 
+{
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private int userId;
+	private Integer userId;
 	
+	
+	private  boolean is_password_reset;
+	private boolean  is_first_login;
 	
 	private String name;
 	
@@ -39,12 +43,28 @@ public class User {
 	
 	private String newpwd;
 
-	public int getUserId() {
+	public Integer getUserId() {
 		return userId;
 	}
 
-	public void setUserId(int userId) {
+	public void setUserId(Integer userId) {
 		this.userId = userId;
+	}
+
+	public boolean isIs_password_reset() {
+		return is_password_reset;
+	}
+
+	public void setIs_password_reset(boolean is_password_reset) {
+		this.is_password_reset = is_password_reset;
+	}
+
+	public boolean isIs_first_login() {
+		return is_first_login;
+	}
+
+	public void setIs_first_login(boolean is_first_login) {
+		this.is_first_login = is_first_login;
 	}
 
 	public String getName() {
@@ -111,9 +131,5 @@ public class User {
 		this.newpwd = newpwd;
 	}
 
-	public User() {
-		
-	}
 	
-		
 }

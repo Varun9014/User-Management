@@ -1,4 +1,4 @@
-package com.user.entity;
+package com.counsellor.usermanagement.Entity;
 
 import java.time.LocalDate;
 
@@ -9,17 +9,15 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "country_tbl")
+@Table(name = "user_tbl")
 public class Country {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	public int countryId;
+	public Integer countryid;
 	
 	public String name;
 	
@@ -28,50 +26,34 @@ public class Country {
 	
 	@UpdateTimestamp
 	public LocalDate updateddate;
-	
 
-
-	public int getCountryId() {
-		return countryId;
+	public int getCountryid() {
+		return countryid;
 	}
 
-
-
-	public void setCountryId(int countryId) {
-		this.countryId = countryId;
+	public void setCountryid(int countryid) {
+		this.countryid = countryid;
 	}
-
-
 
 	public String getName() {
 		return name;
 	}
 
-
-
 	public void setName(String name) {
 		this.name = name;
 	}
-
-
 
 	public LocalDate getCreateddate() {
 		return createddate;
 	}
 
-
-
 	public void setCreateddate(LocalDate createddate) {
 		this.createddate = createddate;
 	}
 
-
-
 	public LocalDate getUpdateddate() {
 		return updateddate;
 	}
-
-
 
 	public void setUpdateddate(LocalDate updateddate) {
 		this.updateddate = updateddate;

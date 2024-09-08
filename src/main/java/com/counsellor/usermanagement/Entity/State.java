@@ -1,4 +1,4 @@
-package com.user.entity;
+package com.counsellor.usermanagement.Entity;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -10,32 +10,14 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "state_tbl")
+
 public class State {
 
-	
-	
-	
-
-
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int stateId;
-	
-	private String name;
-	
-	@ManyToOne
-	@JoinColumn(name="countryId")
-	private Country country;
-
-	public State() {
-		
-	}
-
-	public int getStateId() {
+	public Integer getStateId() {
 		return stateId;
 	}
 
-	public void setStateId(int stateId) {
+	public void setStateId(Integer stateId) {
 		this.stateId = stateId;
 	}
 
@@ -47,16 +29,26 @@ public class State {
 		this.name = name;
 	}
 
-	public Country getCountry() {
-		return country;
+	public User getUser() {
+		return user;
 	}
 
-	public void setCountry(Country country) {
-		this.country = country;
+	public void setUser(User user) {
+		this.user = user;
 	}
 
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Integer stateId;
 
-	
-	
-	
+	private String name;
+
+	@ManyToOne
+	@JoinColumn(name = "userId")
+	private User user;
+
+	public State() {
+
+	}
+
 }
